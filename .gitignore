@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Cache and runtime folders
+.jython_cache/
+.phoenix/
+.oci/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+app.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sensitive files
+config.properties
+*.pem
+oci_api_key.pem
+
+# Oracle Wallet (contains credentials)
+Wallet_*/
+*.sso
+*.p12
+*.jks
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
