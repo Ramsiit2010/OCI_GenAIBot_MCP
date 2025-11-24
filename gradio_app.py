@@ -195,7 +195,9 @@ def _status_pill_html() -> str:
     return f'<span class="status-pill {cls}">{s}</span>'
 
 
-with gr.Blocks(title="OCI GenAI Bot", css=CSS) as demo:
+with gr.Blocks(title="OCI GenAI Bot") as demo:
+    # Inject custom CSS manually for Gradio v6 (css argument removed)
+    gr.HTML(f"<style>{CSS}</style>")
     gr.Markdown("# OCI GenAI Bot")
 
     with gr.Row():
@@ -203,7 +205,8 @@ with gr.Blocks(title="OCI GenAI Bot", css=CSS) as demo:
         refresh = gr.Button("Refresh Status", variant="secondary")
         restart = gr.Button("Restart Agent", variant="secondary")
 
-    chat = gr.Chatbot(type="messages", height=480)
+    # Gradio v6 Chatbot API no longer uses 'type' parameter
+    chat = gr.Chatbot(height=480)
     msg = gr.Textbox(
         label="Message",
         placeholder="Type your query and press Enter...",
